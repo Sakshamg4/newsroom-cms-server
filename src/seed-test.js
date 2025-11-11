@@ -6,7 +6,7 @@ const User = require('./models/User');
 const Article = require('./models/Article');
 
 async function main() {
-  const MONGO = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/newsroom';
+  const MONGO = process.env.MONGO_URL;
   await mongoose.connect(MONGO, { useNewUrlParser: true, useUnifiedTopology: true });
   console.log('Connected to', MONGO);
 

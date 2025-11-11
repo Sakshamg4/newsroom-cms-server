@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 module.exports = async function(){
   try{
-    await mongoose.connect('mongodb://localhost:27017/newsroom');
+    await mongoose.connect(process.env.MONGO_URL);
     console.log(`MongoDB connected ${mongoose.connection.host} : ${mongoose.connection.port}`);
   } catch(err){
     console.error(err);
